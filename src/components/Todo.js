@@ -12,8 +12,8 @@ class Todo extends React.Component {
                     onChange={this.handleChangeCompleted} />
                     {text}
                 </label>
-                <button>編集</button>
-                <button>削除</button>
+                <button type="button" class="btn btn-outline-primary">編集</button>
+                <button type="button" class="btn btn-outline-danger">削除</button>
             </div>
         )
     }

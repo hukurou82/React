@@ -64,7 +64,7 @@ class App extends React.Component {
                     ))}
                 </ul>
 
-                <button onClick={this.handleClickDeleteCompleted}>完了済みを全て削除する</button>
+                <button type="button" class="btn btn-light" onClick={this.handleClickDeleteCompleted}>完了済みを全て削除する</button>
             </div>/*container*/
         )
     }

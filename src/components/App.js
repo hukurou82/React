@@ -1,5 +1,8 @@
 import React from 'react'
 
+import './App.css';
+
+import Header from './Header'
 import Form from './Form'
 import Todo from './Todo'
 import CheckAll from './CheckAll'
@@ -31,14 +34,16 @@ class App extends React.Component {
     render() {
         const { todos } = this.state
         return (
-            <div className="container text-center mt-5" >
-                <h1>todoリスト</h1>
+            <div className="container text-center" >
+
+                <Header />
+
                 <Form onSubmit={this.handleSubmit} />
 
                 <CheckAll allCompleted={
                     todos.length > 0 && todos.every(({ completed }) => completed)
                 }
-                onChange={this.handleChangeAllCompleted}
+                    onChange={this.handleChangeAllCompleted}
                 />
 
                 <select>
@@ -60,7 +65,7 @@ class App extends React.Component {
                 </ul>
 
                 <button onClick={this.handleClickDeleteCompleted}>完了済みを全て削除する</button>
-            </div>
+            </div>/*container*/
         )
     }
 
@@ -77,12 +82,12 @@ class App extends React.Component {
 
     handleChangeAllCompleted = completed => {
         const newTodos = this.state.todos.map(todo => {
-            return{
+            return {
                 ...todo,
                 completed
             }
         })
-        this.setState({todos: newTodos })
+        this.setState({ todos: newTodos })
     }
 
     handleChangeCompleted = (id, completed) => {

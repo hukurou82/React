@@ -10,14 +10,16 @@ class Form extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input
-                    type="text"
-                    value={this.state.input}
-                    onChange={this.handleChange}
-                />
-                <button>追加</button>
-            </form>
+            <div className="mt-5">
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        value={this.state.input}
+                        onChange={this.handleChange}
+                    />
+                    <button>追加</button>
+                </form>
+            </div>
         );
     }
 
